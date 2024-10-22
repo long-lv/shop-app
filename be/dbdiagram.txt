@@ -1,0 +1,160 @@
+table users {
+  id int [pk]
+  email varchar unique
+  password varchar
+  role int // 001: user, 002: manager , 003: admin
+  avatar varchar
+  phone int
+  created_at datetime
+  updated_at datetime
+}
+
+table categories {
+  id int [pk]
+  name varchar unique
+  image text 
+  created_at datetime
+  updated_at datetime
+}
+table brands {
+  id int [pk]
+  name varchar unique
+  image text 
+  created_at datetime
+  updated_at datetime
+}
+table products {
+  id int [pk]
+  name varchar
+  image text
+  price int
+  old_price int 
+  desc text
+  specification text
+  buyturn int 
+  quantity int
+  brand_id int 
+  category_id int
+  rate int
+  total_rate int
+  created_at datetime
+  updated_at datetime
+}
+table feedbacks {
+  id int [pk]
+  product_id int
+  user_id int
+  star int
+  content text
+  created_at datetime
+  updated_at datetime
+}
+table orders {
+  id int [pk]
+  user_id int
+  status int
+  note text
+  total int
+  created_at datetime
+  updated_at datetime
+}
+table order_details {
+  id int [pk]
+  order_id int
+  product_id int
+  price int
+  quantity int 
+  created_at datetime
+  updated_at datetime
+}
+table category_news {
+  id int [pk]
+  name varchar
+  created_at datetime
+  updated_at datetime
+}
+table news {
+  id int [pk]
+  title text 
+  category_news_id int 
+  image text
+  content text
+  created_at datetime
+  updated_at datetime
+}
+
+table new_detail {
+  id int [pk]
+  product_id int
+  news_id int
+  created_at datetime
+  updated_at datetime
+}
+
+table banners {
+  id int [pk]
+  image text
+  status int 
+  created_at datetime
+  updated_at datetime
+}
+
+table banner_details{
+  id int [pk]
+  product_id int
+  banner_id int
+  created_at datetime
+  updated_at datetime
+}
+
+table sliders {
+  id int [pk]
+  image text
+  title text
+  content text
+  created_at datetime
+  updated_at datetime
+}
+
+table inquiries {
+  id int [pk]
+  title text
+  content text 
+  created_at datetime
+  updated_at datetime
+}
+
+table inquiry_details {
+  id int [pk]
+  inquiry_id int
+  user_id int 
+  created_at datetime
+  updated_at datetime
+} bo 
+table group_chats {
+  id int 
+  sender_id int 
+  admin_id int 
+}
+table chats {
+  id int [pk]
+  group_chat_id int
+  content text 
+}
+Ref: "categories"."id" < "products"."category_id"
+Ref: "brands"."id" < "products"."brand_id"
+Ref: "products"."id" < "feedbacks"."product_id"
+Ref: "users"."id" < "feedbacks"."user_id"
+Ref: "users"."id" < "orders"."user_id"
+Ref: "orders"."id" < "order_details"."order_id"
+Ref: "category_news"."id" < "news"."category_news_id"
+Ref: "news"."id" < "new_detail"."news_id"
+Ref: "products"."id" < "new_detail"."product_id"
+Ref: "products"."id" < "order_details"."product_id"
+Ref: "products"."id" < "banner_details"."product_id"
+Ref: "banners"."id" < "banner_details"."banner_id"
+Ref: "users"."id" < "inquiry_details"."user_id"
+Ref: "inquiries"."id" < "inquiry_details"."inquiry_id"
+Ref: "group_chats"."id" <> "chats"."group_chat_id"
+Ref: "group_chats"."sender_id"<>"users"."id"
+Ref: "group_chats"."admin_id"<> "users"."id"

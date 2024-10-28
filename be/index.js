@@ -14,9 +14,10 @@ npx sequelize-cli model:generate --name OrderDetail --attributes order_id:intege
 npx sequelize-cli model:generate --name BannerDetail --attributes product_id:integer,banner_id:integer
 npx sequelize-cli model:generate --name Feedback --attributes product_id:integer,user_id:integer,star:integer,content:text
 npx sequelize-cli model:generate --name NewDetail --attributes product_id:integer,news_id:integer
-
-
-
+npx sequelize-cli model:generate --name Slider --attributes image:text,title:text,content:text
+npx sequelize-cli model:generate --name InquiryDetail --attributes inquiry_id:integer,user_id:integer
+npx sequelize-cli model:generate --name GroupChat --attributes sender_id:integer,admin_id:integer
+npx sequelize-cli model:generate --name Chat --attributes group_chat_id:integer,content:text
 run migrate : 
 
 npx sequelize-cli db:migrate 
@@ -25,3 +26,15 @@ revert the most migration:
 npx sequelize-cli db:migrate:undo
 npx sequelize-cli db:migrate:undo:all
 */
+
+const express = require("express");
+const app = express();
+require('dotenv').config();
+const port = process.env.PORT ?? 3005;
+app.get('/', (req, res) => {
+    res.send("Hello shop app");
+})
+
+app.listen(port, () => {
+    console.log(`sever is connected port ${port}`);
+})

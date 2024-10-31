@@ -1,0 +1,24 @@
+{
+    "MSG_NO_0001": "{{status}} thành công",
+    "MSG_NO_0002": "{{status}} không thành công!",
+    "MSG_NO_0003": "Lấy danh sách {{name}} thành công",
+    "MSG_NO_0004": "Lấy danh sách {{name}} không thành công!",
+    "MSG_NO_0005": "Lấy thông tin {{name}} thành công",
+    "MSG_NO_0006": "Lấy thông tin {{name}} không thành công!",
+    "MSG_NO_0007": "Tạo mới {{name}} thành công",
+    "MSG_NO_4000": "{{field}} không được để trống",
+    "MSG_NO_4001": "Phải từ {{min}} ký tự trở lên",
+    "MSG_NO_4002": "Không được vượt quá {{max}} ký tự",
+    "MSG_NO_4003": "{{field}} phải là một số lớn hơn 0",
+    "MSG_NO_4004": "Định dạng {{field}} không đúng!",
+    "MSG_NO_4005": "{{field}} phải lớn hơn {{min}}",
+    "MSG_NO_4006": "{{field}} phải nhỏ hơn {{max}}",
+    "MSG_NO_4007": "Có lỗi đầu vào, vui lòng kiểm tra lại!",
+    "category": "Danh mục sản phẩm",
+    "product": "Sản phẩm",
+    "news": "Tin tức",
+    "brand": "Thương hiệu",
+    "slider": "Slider",
+    "banner": "Banner"
+}
+  

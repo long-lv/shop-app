@@ -17,12 +17,6 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Feedback, {
         foreignKey: 'user_id'
       })
-      User.hasMany(models.GroupChat, {
-        foreignKey: 'admin_id'
-      })
-      User.hasMany(models.GroupChat, {
-        foreignKey: 'sender_id'
-      })
     }
   }
   User.init({

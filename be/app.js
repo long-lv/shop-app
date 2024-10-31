@@ -26,15 +26,17 @@ revert the most migration:
 npx sequelize-cli db:migrate:undo
 npx sequelize-cli db:migrate:undo:all
 */
-
-const express = require("express");
-const app = express();
 require('dotenv').config();
-const port = process.env.PORT ?? 3005;
-app.get('/', (req, res) => {
-    res.send("Hello shop app");
-})
+const express = require("express");
+const i18n = require("./src/config/i18n");
+const { setLang } = require('./src/middeware');
+const app = express();
+app.use(express.json());
+app.use(i18n.init);
+app.use(setLang);
 
-app.listen(port, () => {
-    console.log(`sever is connected port ${port}`);
-})
+express.urlencoded({ extended: true });
+// init router
+app.use('/api',require('./src/routes'));
+
+module.exports = app;

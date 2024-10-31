@@ -1,0 +1,23 @@
+{
+    "MSG_NO_0001": "{{status}} successful",
+    "MSG_NO_0002": "{{status}} failed!",
+    "MSG_NO_0003": "Successfully retrieved list of {{name}}",
+    "MSG_NO_0004": "Failed to retrieve list of {{name}}!",
+    "MSG_NO_0005": "Successfully retrieved information for {{name}}",
+    "MSG_NO_0006": "Failed to retrieve information for {{name}}!",
+    "MSG_NO_0007": "Successfully created new {{name}}",
+    "MSG_NO_4000": "{{field}} cannot be empty",
+    "MSG_NO_4001": "Must be at least {{min}} characters",
+    "MSG_NO_4002": "Cannot exceed {{max}} characters",
+    "MSG_NO_4003": "{{field}} must be a number greater than 0",
+    "MSG_NO_4004": "Invalid {{field}} format!",
+    "MSG_NO_4005": "{{field}} must be greater than {{min}}",
+    "MSG_NO_4006": "{{field}} must be less than {{max}}",
+    "MSG_NO_4007": "Valitor error",
+    "category": "Category",
+    "product": "Product",
+    "news": "News",
+    "brand": "Brand",
+    "slider": "Slider",
+    "banner": "Banner"
+}
